@@ -36,7 +36,7 @@ $ touch foo.txt
 $ ls
 Copy and paste the output below.
 ----------
-
+touch foo.txt
 
 
 ==========
@@ -52,7 +52,10 @@ $ touch bar.txt
 
 Copy and paste the output below.
 ----------
+ls -l
 
+-rw-r--r--  1 student  staff  0 Sep 16 16:04 bar.txt
+-rw-r--r--  1 student  staff  0 Sep 16 16:04 foo.txt
 
 
 ==========
@@ -61,21 +64,28 @@ Copy and paste the output below.
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
+cp bar.txt baz.txt
 
-
-
+--
+bar.txt	baz.txt	foo.txt
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+rm bar.txt
+-
+baz.txt	foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
-
+mv foo.txt qux.txt
+-
+baz.txt	qux.txt
 
 
 ==========
@@ -90,7 +100,7 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
-
+rmdir: my_files/: Directory not empty
 
 
 ==========
@@ -98,7 +108,7 @@ Write out the command that you used and what happened.
 
 Write out the command that you used and what happened.
 ----------
-
+rm: my_files/: is a directory
 
 
 ==========
@@ -108,6 +118,7 @@ Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
+rm -rf my_files
 
 
 
@@ -120,7 +131,7 @@ Use the command called cat on the file to show its contents.
 
 Describe what happened below.
 ----------
-
+showed the entire file without going to submenue
 
 
 ==========
@@ -132,7 +143,7 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
-
+head books/other/pg1232.txt
 
 
 ==========
@@ -145,7 +156,7 @@ Use tail on the file to show the contents of the end of the file.
 Write the command that you used below.  Write the last line of the output below.
 ----------
 
-
+tail books/other/pg1232.txt
 
 ==========
 19. Using the same file...
@@ -156,7 +167,10 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
-
+less books/other/pg1232.txt
+-
+spacebar = go down one page
+q = quit
 
 
 ==========
@@ -164,22 +178,29 @@ Write the command that you used below.  Describe what spacebar and q does after 
 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
-
-
-
+less = when someone wants to read a text file more natrually and able to navigate backward
+more = old version of less and you cannot navigate backward
+cat = read the text file and dump every single word to the command line without any option for navigation
+tail = shows the end of the note file
+head = shows the beginning of the note file
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
-
+wc -w books/other/pg1232.txt
+-
+52639
 
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
-
+wc -l books/other/pg1232.txt
+-
+5063
 
 ==========
 23.  Make sure you're in the books/other folder.  Copy all of the txt files from that folder to your home directory using wildcard matching.
 
 Write the command that you used below.
 ----------
+cp *.txt ~
